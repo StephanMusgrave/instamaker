@@ -25,6 +25,19 @@ end
 
 
 describe 'Editing a post' do
+  before { Post.create(title: 'Photo', description: 'a test picture')}
+  it 'saves the change to the post' do
+        visit '/posts'
+        click_link 'Edit Photo'
+
+        fill_in 'Title', with: 'Changed title'
+        click_button 'Update Post'
+        
+        expect(current_path).to eq '/posts'
+        expect(page).to have_content 'Changed title'
+      end
+
+
 
 end
 

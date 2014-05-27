@@ -17,4 +17,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    p "hiiiiiii"
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    
+    if @post.update(params["post"].permit(:title, :description))
+      redirect_to '/posts'
+    else
+      render 'edit'
+    end
+  end
+
 end
