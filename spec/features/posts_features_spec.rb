@@ -36,7 +36,7 @@ describe 'Editing a post' do
         
         expect(current_path).to eq '/posts'
         expect(page).to have_content 'Changed title'
-      end
+  end
 end
 
 describe 'Delete a post' do
@@ -48,13 +48,13 @@ describe 'Delete a post' do
       expect(page).not_to have_content 'Photo1'
       expect(page).to have_content 'Deleted successfully'
   end 
-  
-end
-
-describe 'Add a picture' do
-  xit 'adds a picture' do
-    attach_file 'Steam' Rails.root.join ('spec/images/steam1.jpg')
-    expect(page).to have_css 'img.uploaded.pic'
-  end
 
 end
+
+# describe 'Add a picture' do
+#   xit 'adds a picture' do
+#     attach_file 'Steam' Rails.root.join ('spec/images/steam1.jpg')
+#     expect(page).to have_css 'img.uploaded.pic'
+#   end
+
+# end

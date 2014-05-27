@@ -18,7 +18,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    p "hiiiiiii"
     @post = Post.find(params[:id])
   end
 
@@ -30,6 +29,13 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = 'Deleted successfully'
+    redirect_to '/posts'
   end
 
 end
