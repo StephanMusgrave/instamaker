@@ -13,16 +13,17 @@ end
 
 describe 'Making a post' do
   it 'adds it to the posts page' do
-        visit 'posts/new'
+        visit '/posts/new'
         fill_in 'Title', with: 'Picture 1'
         fill_in 'Description', with: 'My first Picture'
+        attach_file 'Picture', Rails.root.join('spec/images/steam1.jpg')
         click_button 'Create Post'
 
         expect(current_path).to eq   '/posts'
         expect(page).to have_content 'Picture 1'
+        expect(page).to have_css 'img.uploaded-pic'
   end
 end
-
 
 describe 'Editing a post' do
   before { Post.create(title: 'Photo', description: 'a test picture')}
@@ -50,11 +51,3 @@ describe 'Delete a post' do
   end 
 
 end
-
-# describe 'Add a picture' do
-#   xit 'adds a picture' do
-#     attach_file 'Steam' Rails.root.join ('spec/images/steam1.jpg')
-#     expect(page).to have_css 'img.uploaded.pic'
-#   end
-
-# end

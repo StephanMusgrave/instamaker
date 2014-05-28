@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
 group :development, :test do
   gem 'annotate'
   gem 'rspec-rails'
