@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe 'posts index page' do
-
   context 'no posts have been added' do
     it 'should display a message' do
       visit '/posts'
@@ -12,6 +11,7 @@ describe 'posts index page' do
 end
 
 describe 'Making a post' do
+  
   context 'logged out' do
     it 'takes us to sign up page' do
       visit '/posts'
@@ -20,32 +20,53 @@ describe 'Making a post' do
       expect(page).to have_content 'Sign up'
     end
   end
-   
-  it 'adds it to the posts page' do
-        visit '/posts/new'
-        fill_in 'Title', with: 'Picture 1'
-        fill_in 'Description', with: 'My first Picture'
-        attach_file 'Picture', Rails.root.join('spec/images/steam1.jpg')
-        click_button 'Create Post'
 
-        expect(current_path).to eq   '/posts'
-        expect(page).to have_content 'Picture 1'
-        expect(page).to have_css 'img.uploaded-pic'
+  context 'logged in' do 
+    before do
+      user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
+      login_as user
+    end
+
+    it 'adds it to the posts page' do
+      visit '/posts/new'
+      fill_in 'Title', with: 'Picture 1'
+      fill_in 'Description', with: 'My first Picture'
+      attach_file 'Picture', Rails.root.join('spec/images/steam1.jpg')
+      click_button 'Create Post'
+
+      expect(current_path).to eq   '/posts'
+      expect(page).to have_content 'Picture 1'
+      expect(page).to have_css 'img.uploaded-pic'
+    end
   end
 end
 
 describe 'Editing a post' do
   before { Post.create(title: 'Photo', description: 'a test picture')}
   
-  it 'saves the change to the post' do
-        visit '/posts'
-        click_link 'Edit Photo'
+  context 'logged out' do
+    it 'shows no edit link' do
+      visit '/posts'
+      expect(page).not_to have_link 'Edit Photo'
+    end
+  end
+  
+  context 'logged in' do
+    before do
+      user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
+      login_as user
+    end
+  
+    it 'saves the change to the post' do
+          visit '/posts'
+          click_link 'Edit Photo'
 
-        fill_in 'Title', with: 'Changed title'
-        click_button 'Update Post'
-        
-        expect(current_path).to eq '/posts'
-        expect(page).to have_content 'Changed title'
+          fill_in 'Title', with: 'Changed title'
+          click_button 'Update Post'
+          
+          expect(current_path).to eq '/posts'
+          expect(page).to have_content 'Changed title'
+    end
   end
 end
 

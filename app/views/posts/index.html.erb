@@ -3,11 +3,15 @@
   <% @posts.each do |post| %>
   <div class='Post'>
     <h2><%= post.title %></h2>
-      <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
-      <p><%= post.description %></p>
-      <%= link_to "Edit #{post.title}", edit_post_path(post) %>
-      <%= link_to "Delete #{post.title}", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
+     
+        <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+        <p><%= post.description %></p>
+      <h3>
+      <% if user_signed_in? %>  <%= link_to "Edit #{post.title}", edit_post_path(post) %>
+        <%= link_to "Delete #{post.title}", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%end%>
+      </h3>
+    </div>
   <% end %>
 
 <% else %>
