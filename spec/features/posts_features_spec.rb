@@ -47,7 +47,7 @@ describe 'Editing a post' do
   context 'logged out' do
     it 'shows no edit link' do
       visit '/posts'
-      expect(page).not_to have_link 'Edit Photo'
+      expect(page).not_to have_link 'Edit'
     end
   end
   
@@ -59,7 +59,7 @@ describe 'Editing a post' do
   
     it 'saves the change to the post' do
           visit '/posts'
-          click_link 'Edit Photo'
+          click_link 'Edit'
 
           fill_in 'Title', with: 'Changed title'
           click_button 'Update Post'
@@ -76,7 +76,7 @@ describe 'Delete a post' do
   context 'logged out' do
     it 'shows no edit link' do
       visit '/posts'
-      expect(page).not_to have_link 'Edit Photo'
+      expect(page).not_to have_link 'Edit'
     end
   end
   
@@ -85,12 +85,51 @@ describe 'Delete a post' do
       user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
       login_as user
     end
+
     it 'removes the post' do
       visit '/posts'
-        click_link 'Delete Photo1'
-        expect(page).not_to have_content 'Photo1'
-        expect(page).to have_content 'Deleted successfully'
+      click_link 'Delete'
+      expect(page).not_to have_content 'Photo1'
+      expect(page).to have_content 'Deleted successfully'
     end
+  end
+end
+
+describe 'deleting another users post' do
+    
+  before do
+    steve = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
+    alex  = User.create(email: 'Alex@a.com', password: 'password', password_confirmation: 'password')
+    Post.create(title: "Alex's Photo", description: 'a test picture')
+    login_as steve
+  end
+
+  it 'is removed from the posts page' do
+    visit '/posts'
+    click_link 'Delete'
+    expect(page).to have_content "Alex's Photo"
   end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
