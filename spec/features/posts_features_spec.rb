@@ -12,6 +12,15 @@ describe 'posts index page' do
 end
 
 describe 'Making a post' do
+  context 'logged out' do
+    it 'takes us to sign up page' do
+      visit '/posts'
+      click_link 'Make a Post'
+
+      expect(page).to have_content 'Sign up'
+    end
+  end
+   
   it 'adds it to the posts page' do
         visit '/posts/new'
         fill_in 'Title', with: 'Picture 1'
