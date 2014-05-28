@@ -73,11 +73,24 @@ end
 describe 'Delete a post' do
   before { Post.create(title: 'Photo1', description: 'a test picture')}
 
-  it 'removes the post' do
-    visit '/posts'
-      click_link 'Delete Photo1'
-      expect(page).not_to have_content 'Photo1'
-      expect(page).to have_content 'Deleted successfully'
-  end 
+  context 'logged out' do
+    it 'shows no edit link' do
+      visit '/posts'
+      expect(page).not_to have_link 'Edit Photo'
+    end
+  end
+  
+  context 'logged in' do
+    before do
+      user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
+      login_as user
+    end
+    it 'removes the post' do
+      visit '/posts'
+        click_link 'Delete Photo1'
+        expect(page).not_to have_content 'Photo1'
+        expect(page).to have_content 'Deleted successfully'
+    end
+  end
 
 end
