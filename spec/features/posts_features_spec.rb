@@ -8,6 +8,20 @@ describe 'posts index page' do
       expect(page).to have_link 'Make a Post'
     end
   end
+
+  context 'with posts' do
+    before {
+      user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
+      Post.create(title: 'Cool post', description: 'Hello world', user: user)
+    }
+
+    it 'displays the posts' do
+      visit '/posts'
+
+      expect(page).to have_content 'Cool post'
+    end
+  end
+
 end
 
 describe 'Making a post' do
@@ -41,34 +55,34 @@ describe 'Making a post' do
   end
 end
 
-describe 'Editing a post' do
-  before { Post.create(title: 'Photo', description: 'a test picture')}
+# describe 'Editing a post' do
+#   before { Post.create(title: 'Photo', description: 'a test picture')}
   
-  context 'logged out' do
-    it 'shows no edit link' do
-      visit '/posts'
-      expect(page).not_to have_link 'Edit'
-    end
-  end
+#   context 'logged out' do
+#     it 'shows no edit link' do
+#       visit '/posts'
+#       expect(page).not_to have_link 'Edit'
+#     end
+#   end
   
-  context 'logged in' do
-    before do
-      user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
-      login_as user
-    end
+#   context 'logged in' do
+#     before do
+#       user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
+#       login_as user
+#     end
   
-    it 'saves the change to the post' do
-          visit '/posts'
-          click_link 'Edit'
+#     it 'saves the change to the post' do
+#           visit '/posts'
+#           click_link 'Edit'
 
-          fill_in 'Title', with: 'Changed title'
-          click_button 'Update Post'
+#           fill_in 'Title', with: 'Changed title'
+#           click_button 'Update Post'
           
-          expect(current_path).to eq '/posts'
-          expect(page).to have_content 'Changed title'
-    end
-  end
-end
+#           expect(current_path).to eq '/posts'
+#           expect(page).to have_content 'Changed title'
+#     end
+#   end
+# end
 
 describe 'Delete a post' do
   # before { Post.create(title: 'Photo1', description: 'a test picture')}
@@ -101,14 +115,13 @@ describe 'deleting another users post' do
   before do
     steve = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
     alex  = User.create(email: 'Alex@a.com', password: 'password', password_confirmation: 'password')
-    Post.create(title: "Alex's Photo", description: 'a test picture')
+    Post.create(title: "Alex's Photo", description: 'a test picture', user: alex)
     login_as steve
   end
 
-  it 'is removed from the posts page' do
+  it 'is not removed from the posts page' do
     visit '/posts'
-    click_link 'Delete'
-    expect(page).to have_content "Alex's Photo"
+    expect(page).not_to have_link 'Delete'
   end
 
 end

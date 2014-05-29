@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-
   end
 
   def new
@@ -13,11 +12,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params["post"].permit(:title, :description, :picture))
     @post.user = current_user
-    if @post.save!
-      redirect_to '/posts'
-    else
-      render 'new'
-    end
+    @post.save!
+
+    redirect_to posts_path
   end
 
   def edit
@@ -35,12 +32,54 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    if @post.user == current_user
-      @post.destroy
-      flash[:notice] = 'Deleted successfully'
-    end
+    @post = current_user.posts.find(params[:id])
+    @post.destroy
+
+    flash[:notice] = 'Deleted successfully'
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = 'This is not your post!'
+  ensure
     redirect_to '/posts'
   end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
