@@ -71,7 +71,7 @@ describe 'Editing a post' do
 end
 
 describe 'Delete a post' do
-  before { Post.create(title: 'Photo1', description: 'a test picture')}
+  # before { Post.create(title: 'Photo1', description: 'a test picture')}
 
   context 'logged out' do
     it 'shows no edit link' do
@@ -82,14 +82,15 @@ describe 'Delete a post' do
   
   context 'logged in' do
     before do
-      user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
-      login_as user
+      alex  = User.create(email: 'Alex@a.com', password: 'password', password_confirmation: 'password')
+      login_as alex
+       Post.create(title: "Alex's Photo", description: 'a test picture', user: alex)
     end
 
     it 'removes the post' do
       visit '/posts'
       click_link 'Delete'
-      expect(page).not_to have_content 'Photo1'
+      expect(page).not_to have_content "Alex's Photo"
       expect(page).to have_content 'Deleted successfully'
     end
   end
@@ -111,6 +112,8 @@ describe 'deleting another users post' do
   end
 
 end
+
+
 
 
 
