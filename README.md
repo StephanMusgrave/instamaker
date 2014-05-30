@@ -17,6 +17,7 @@ Technologies used
 - Rails
 - TDD (RSpec)
 - Bootstrap
+- Factory Girl
 - Postgresql
 - Devise
 - Javascript
