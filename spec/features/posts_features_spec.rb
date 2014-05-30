@@ -11,7 +11,8 @@ describe 'posts index page' do
 
   context 'with posts' do
     before {
-      user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
+      user = create(:user)
+      # user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
       Post.create(title: 'Cool post', description: 'Hello world', user: user)
     }
 
