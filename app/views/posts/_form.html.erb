@@ -1,12 +1,12 @@
 <%= form_for @post do |f| %>
+  <%= f.label :picture %>
+  <%= f.file_field :picture, required: true%>
+
   <%= f.label :title %>
   <%= f.text_field :title, required: true %>
 
   <%= f.label :description %>
-  <%= f.text_field :description, required: true %>
-
-  <%= f.label :picture %>
-  <%= f.file_field :picture, required: true %>
+  <%= f.text_field :description %>
 
   <%= f.label :tag_names, 'Tags' %>
   <%= f.text_field :tag_names%>

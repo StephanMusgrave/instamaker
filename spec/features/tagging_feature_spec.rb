@@ -14,8 +14,8 @@ describe 'tagging posts' do
       fill_in 'Tags', with: 'steam, night'
       click_button 'Create Post'
 
-      expect(page).to have_link '#steam'
-      expect(page).to have_link '#night'
+      expect(page).to have_content '#steam'
+      expect(page).to have_content '#night'
     end
 
 end
