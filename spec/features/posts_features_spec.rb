@@ -12,14 +12,16 @@ describe 'posts index page' do
   context 'with posts' do
     before {
       user = create(:user)
-      # user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
-      Post.create(title: 'Cool post', description: 'Hello world', user: user)
+      # create(:post)
+      create(:post, user: user)
+
+      # Post.create(title: 'Test post', description: 'Hello world', user: user)
     }
 
     it 'displays the posts' do
       visit '/posts'
 
-      expect(page).to have_content 'Cool post'
+      expect(page).to have_content 'Test Post'
     end
   end
 
@@ -38,7 +40,7 @@ describe 'Making a post' do
 
   context 'logged in' do 
     before do
-      user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
+      user = create(:user)
       login_as user
     end
 
@@ -97,9 +99,10 @@ describe 'Delete a post' do
   
   context 'logged in' do
     before do
-      alex  = User.create(email: 'Alex@a.com', password: 'password', password_confirmation: 'password')
+      alex = create(:user, email: 'Alex@a.com')
       login_as alex
-       Post.create(title: "Alex's Photo", description: 'a test picture', user: alex)
+      create(:post, title: "Alex's Photo", user: alex)
+       # Post.create(title: "Alex's Photo", description: 'a test picture', user: alex)
     end
 
     it 'removes the post' do
@@ -114,9 +117,10 @@ end
 describe 'deleting another users post' do
     
   before do
-    steve = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
-    alex  = User.create(email: 'Alex@a.com', password: 'password', password_confirmation: 'password')
-    Post.create(title: "Alex's Photo", description: 'a test picture', user: alex)
+    alex = create(:user, email: 'Alex@a.com')
+    steve = create(:user, email: 'Steve@s.com')
+    create(:post, title: "Alex's Photo", user: alex)
+    # Post.create(title: "Alex's Photo", description: 'a test picture', user: alex)
     login_as steve
   end
 

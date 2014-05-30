@@ -1,4 +1,3 @@
-# This will guess the User class
 FactoryGirl.define do
   factory :post do
     title "Test Post"
@@ -6,3 +5,4 @@ FactoryGirl.define do
     # user "user"
   end
 end
+
