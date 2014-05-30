@@ -29,11 +29,11 @@
             </div>
             <div class="panel-body">
               <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
-              <p>Posted by <%= post.user.email %></p>
               <p><%= post.description %></p>
               <p><% post.tags.each do |tag| %>
                   <%= link_to tag.name, '#' %>
                 <% end %></p>
+              <p>posted by <%= post.user.email %></p>
               <% if post.user == current_user %>  
                 <%= link_to "Edit", edit_post_path(post), class: 'btn btn-sm btn-warning'%>
                 <%= link_to "Delete", post_path(post), method: :delete, class: 'btn btn-sm btn-danger' %>
