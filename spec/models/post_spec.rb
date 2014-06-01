@@ -33,8 +33,25 @@ describe Post do
       end    
     end
 
-  end
+    describe 'multiple comma-separate tags' do
+      it 'adds each tag to the post' do
+        post.tag_names = 'steam, night'
+        expect(post.tags.count).to eq 2
+      end
+    end
 
+    describe 'reusing tags' do
+      let!(:tag) { Tag.create(name: '#steam') }
+
+      it 'reuses tags if they exist' do
+       post.tag_names = 'steam'
+       expect(Tag.count).to eq 1
+       expect(tag.posts).to include post
+      end
+    end
+
+  end
+  
 
 
 end

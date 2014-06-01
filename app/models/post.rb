@@ -20,14 +20,12 @@ class Post < ActiveRecord::Base
   end
 
   def tag_names=(tag_names)
-    return if tag_names.blank?
-
+    return if tag_names .blank?
     tag_names.split(/,\s?/).uniq.each do |tag_name|
       formatted_name = '#' + tag_name.delete('#')
-
       tag = Tag.find_or_create_by(name: formatted_name)
       self.tags << tag
-    end
+      end
   end
 
 end
