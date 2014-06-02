@@ -9,7 +9,7 @@
   <%= f.text_field :description %>
 
   <%= f.label :tag_names, 'Tags' %>
-  <%= f.text_field :tag_names%>
+  <%= f.text_field :tag_names, data: { role: 'tagsinput' } %>
 
   <%= f.submit %>
 <% end %>

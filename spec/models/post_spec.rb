@@ -38,6 +38,19 @@ describe Post do
         post.tag_names = 'steam, night'
         expect(post.tags.count).to eq 2
       end
+      context 'without spaces' do
+        it 'adds each tag to the post' do
+        post.tag_names = 'steam,night'
+        expect(post.tags.count).to eq 2
+      end
+      end
+    end
+
+    describe 'multiple duplicate tags' do
+      it 'only adds unique tags to the post' do
+        post.tag_names = 'steam, night, steam'
+        expect(post.tags.count).to eq 2
+      end
     end
 
     describe 'reusing tags' do
