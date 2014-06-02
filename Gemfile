@@ -31,6 +31,8 @@ gem 'devise'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
 gem 'bootstrap-sass'
+gem 'thin'
+gem 'websocket-rails'
 
 
 group :development, :test do
