@@ -1,4 +1,4 @@
- <div class='col-md-4'>
+ <div class='col-md-4 post' data-id='<%= post.id %>'>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><%= post.title %></h3>
@@ -14,7 +14,7 @@
         <% if post.user == current_user %>  
           <%= link_to "Edit", edit_post_path(post), class: 'btn btn-sm btn-warning'%>
           <%= link_to "Delete", post_path(post), method: :delete, class: 'btn btn-sm btn-danger' %>
-          <%= link_to "♥ #{post.likes.count}", post_likes_path(post), method: :post, class: 'like_button btn btn-sm btn-success' %>
+          <%= link_to "♥ #{post.likes.count}", post_likes_path(post), class: 'like_button btn btn-sm btn-success' %>
         <%end%>
         </div>
         <%= link_to 'Show More', '#', class: 'btn btn-sm btn-info', data: { toggle: 'modal', target: ".image-modal-#{post.id}" } %>

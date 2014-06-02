@@ -7,6 +7,7 @@ require 'capybara/rails'
 require 'capybara/poltergeist'
 
 Capybara.javascript_driver = :poltergeist
+
 Capybara.server do |app, port|
   require 'rack/handler/thin'
   Rack::Handler::Thin.run(app, :Port => port)
