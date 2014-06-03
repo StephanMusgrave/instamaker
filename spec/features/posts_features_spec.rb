@@ -40,8 +40,8 @@ describe 'Making a post' do
 
   context 'logged in' do 
     before do
-      user = create(:user)
-      login_as user
+      user = User.create! attributes_for(:user)
+      login_as user, scope: :user
     end
 
     it 'adds it to the posts page' do
@@ -71,7 +71,7 @@ end
 #   context 'logged in' do
 #     before do
 #       user = User.create(email: 'Steve@s.com', password: 'password', password_confirmation: 'password')
-#       login_as user
+#       login_as user, scope: :user
 #     end
   
 #     it 'saves the change to the post' do
@@ -100,7 +100,7 @@ describe 'Delete a post' do
   context 'logged in' do
     before do
       alex = create(:user, email: 'Alex@a.com')
-      login_as alex
+      login_as alex, scope: :user
       create(:post, title: "Alex's Photo", user: alex)
        # Post.create(title: "Alex's Photo", description: 'a test picture', user: alex)
     end
@@ -121,7 +121,7 @@ describe 'deleting another users post' do
     steve = create(:user, email: 'Steve@s.com')
     create(:post, title: "Alex's Photo", user: alex)
     # Post.create(title: "Alex's Photo", description: 'a test picture', user: alex)
-    login_as steve
+    login_as steve, scope: :user
   end
 
   it 'is not removed from the posts page' do

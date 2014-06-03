@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'liking posts' do
   before do
     user = create(:user)
-    login_as user
+    login_as user, scope: :user
     
   end
 
