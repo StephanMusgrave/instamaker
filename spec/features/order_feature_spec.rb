@@ -6,6 +6,10 @@ describe 'orders page' do
   let(:admin) { create(:admin) }
 
   context 'logged in as admin' do
+    before do
+      login_as admin, scope: :admin
+    end
+
     context 'no orders' do
       it 'sees a message' do
         visit '/orders'
