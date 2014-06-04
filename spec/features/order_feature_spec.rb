@@ -31,7 +31,7 @@ describe 'orders page' do
       Order.create(id: 1, post: post, user: user, created_at: christmas_day)
       visit '/orders'
     end
-
+ 
     it 'displays the product' do
       expect(page).to have_link 'Bristol'
     end
