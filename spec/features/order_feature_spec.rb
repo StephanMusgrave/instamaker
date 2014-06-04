@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'orders page' do
   let(:post) { create(:post, title: 'Bristol') }
-  let(:user) { create(:user, email: 'Steve@s.com') }
+  let(:user) { create(:user, email: 'steve@s.com') }
   let(:admin) { create(:admin) }
 
   context 'logged in as admin' do
@@ -27,6 +27,7 @@ describe 'orders page' do
 
   context 'with orders' do
     before do
+      login_as admin, scope: :admin
       christmas_day =Date.new(2013,12,25)
       Order.create(id: 1, post: post, user: user, created_at: christmas_day)
       visit '/orders'
@@ -37,7 +38,7 @@ describe 'orders page' do
     end
 
     it 'displays the customer email' do
-      expect(page).to have_content 'Steve@s.com'
+      expect(page).to have_content 'steve@s.com'
     end
 
     it 'displays the order number' do
