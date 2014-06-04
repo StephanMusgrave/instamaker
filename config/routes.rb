@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :admins
+  
+  root 'posts#index'
+  
   devise_for :users
 
-  root 'posts#index'
-
   resources :posts do
+    resources :charges
     resources :likes
+
   end
 
   resources :users do
