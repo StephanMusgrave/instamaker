@@ -1,28 +1,36 @@
 class ChargesController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @post = Post.find params[:post_id]
   end
 
   def create
-    # Amount in cents
-    @amount = 500
+    @post = Post.find params[:post_id]
+
+    # Amount in pennies
+    @amount = 2000
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
+      :email => params[:stripeEmail],
+
       :card  => params[:stripeToken]
     )
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount,
-      :description => 'Rails Stripe customer',
-      :currency    => 'usd'
+      :description => "Print of #{@post.title}",
+      :currency    => 'gbp'
     )
+
+    Order.create(user: current_user, post: @post)
+    flash[:notice] = "Thanks for your order"
+    redirect_to '/posts'
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to charges_path
+    redirect_to post_charges_path(@post)
   end
 
 end

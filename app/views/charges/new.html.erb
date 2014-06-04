@@ -1,9 +1,11 @@
-<%= form_tag post_charges_path(@post) do %>
-  <h2>Buy print for £20</h2>
+<div class='container'>
+  <%= form_tag post_charges_path(@post) do %>
+    <h2>Buy print for £20</h2>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.application.secrets.stripe_public_key %>"
-          data-description="An original print"
-          data-currency='GBP'
-          data-amount="2000"></script>
-<% end %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.application.secrets.stripe_public_key %>"
+            data-description="An original print"
+            data-currency='GBP'
+            data-amount="2000"></script>
+  <% end %>
+</div>
