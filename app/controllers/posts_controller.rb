@@ -9,8 +9,12 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  # def location
+  #   @location = Location.new
+  # end
+
   def create
-    @post = Post.new(params["post"].permit(:title, :description, :picture, :tag_names))
+    @post = Post.new(params["post"].permit(:title, :description, :picture, :tag_names, :location))
     @post.user = current_user
     @post.save!
 

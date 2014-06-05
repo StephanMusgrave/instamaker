@@ -49,6 +49,7 @@ describe 'Making a post' do
       fill_in 'Title', with: 'Picture 1'
       fill_in 'Description', with: 'My first Picture'
       attach_file 'Picture', Rails.root.join('spec/images/steam1.jpg')
+      fill_in 'Location', with: '25 City Road, London'
       click_button 'Create Post'
 
       expect(current_path).to eq   '/posts'
