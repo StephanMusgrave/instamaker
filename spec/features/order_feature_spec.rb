@@ -57,7 +57,7 @@ describe 'orders' do
 
     it 'sends an email with the name of the picture' do
       Order.create(user: user, post: post)
-      open_email('steve.s.com')
+      open_email('steve@s.com')
       expect(current_email).to have_content 'Thanks for ordering a print of Bristol'
     end
 
