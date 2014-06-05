@@ -9,10 +9,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # def location
-  #   @location = Location.new
-  # end
-
   def create
     @post = Post.new(params["post"].permit(:title, :description, :picture, :tag_names, :location))
     @post.user = current_user
@@ -21,19 +17,23 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  def edit
+  # def edit
+  #   @post = Post.find(params[:id])
+  # end
+
+  def show
     @post = Post.find(params[:id])
   end
 
-  def update
-    @post = Post.find(params[:id])
+  # def update
+  #   @post = Post.find(params[:id])
     
-    if @post.update(params["post"].permit(:title, :description, :picture, :tag_names))
-      redirect_to '/posts'
-    else
-      render 'edit'
-    end
-  end
+  #   if @post.update(params["post"].permit(:title, :description, :picture, :tag_names, :location))
+  #     redirect_to '/posts'
+  #   else
+  #     render 'edit'
+  #   end
+  # end
 
   def destroy
     @post = current_user.posts.find(params[:id])

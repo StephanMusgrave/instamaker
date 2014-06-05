@@ -92,9 +92,9 @@ describe 'Delete a post' do
   # before { Post.create(title: 'Photo1', description: 'a test picture')}
 
   context 'logged out' do
-    it 'shows no edit link' do
+    it 'shows no delete link' do
       visit '/posts'
-      expect(page).not_to have_link 'Edit'
+      expect(page).not_to have_link 'Delete'
     end
   end
   
@@ -121,7 +121,6 @@ describe 'deleting another users post' do
     alex = create(:user, email: 'Alex@a.com')
     steve = create(:user, email: 'Steve@s.com')
     create(:post, title: "Alex's Photo", user: alex)
-    # Post.create(title: "Alex's Photo", description: 'a test picture', user: alex)
     login_as steve, scope: :user
   end
 
@@ -132,7 +131,24 @@ describe 'deleting another users post' do
 
 end
 
+describe 'maps for posts' do
+  before do
+    @steve = create(:user, email: 'Steve@s.com')
+    login_as @steve, scope: :user
+  end  
 
+  it 'shows a map button if post has a location' do
+    create(:post, location: "1 High Street, London", user: @steve)
+    visit '/posts'
+    expect(page).to have_link 'Map'
+  end
+
+  it 'does not show a map button if post does not have an location:' do
+    create(:post, user: @steve)
+    visit '/posts'
+    expect(page).not_to have_link 'Map'
+  end 
+end
 
 
 
