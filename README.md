@@ -1,19 +1,25 @@
-Instamaker - na Instagram clone 
-===
+# {Instamaker - an Instagram clone}
+
+## Objectives
+Learning to implement .........
 I created an app that 
 
 ![](????????????.png)
+
+## How to run it
+```sh
+git clone git@github.com:StephanMusgrave
+cd instamaker
+open index.html
+```
+
 
 Heroku
 ----
 [App on Heroku]
 
-Objectives of exercise
-----
-Learning to implement .........
 
-Technologies used
-----
+## Technologies used
 - Rails
 - TDD (RSpec)
 - Bootstrap
@@ -25,17 +31,10 @@ Technologies used
 - CSS3
 - Git
 
-How to run it
-----
-```sh
-git clone git@github.com:StephanMusgrave
-cd instamaker
-open index.html
-```
+## Developed by
 
-Pairing Partners
-----
-[Steve]
+[Steve Musgrave]
 
-[Steve]:https://github.com/StephanMusgrave
+[Steve Musgrave]:https://github.com/StephanMusgrave
 [App on Heroku]:http://.........
+
