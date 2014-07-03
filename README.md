@@ -31,6 +31,28 @@ Heroku
 - CSS3
 - Git
 
+|Technology                 |Used for                        |
+|---------------------------|--------------------------------|
+|Ruby                       |Main programming language       |
+|Javascript                 |Maps/Ajax & jQuery              |
+|Ajax                       |Mainly used in the chatroom     |
+|jQuery                     |Manipulating the DOM for a dynamic experience |
+|Rails                      |Model View Contraoller Framework|
+|[Heroku]                   |Deployment                      |
+|New Relic                  |Real time application monitoring|
+|Papertrail                 |Tracking events & Log management|
+|Rspec                      |TDD: Unit testing               |
+|Capybara                   |simulates how a user would interact with a website|
+|Postgrsql                  |SQL Database                        |
+|Devise                     |Creating users                  |
+|Amazon Web Services        |Bulk image hosting              |
+|Paperclip                  |Uploading images                |
+|HTML5                      |Web Pages                       |
+|CSS3                       |Styling                         |
+|Bootstrap                  |Base styling theme                      |
+|Geolocation/Geomapper      |Showing maps                    |
+
+
 ## Developed by
 
 [Steve Musgrave]
