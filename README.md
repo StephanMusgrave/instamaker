@@ -37,19 +37,18 @@ Heroku
 |Javascript                 |Maps/Ajax & jQuery              |
 |Ajax                       |Mainly used in the chatroom     |
 |jQuery                     |Manipulating the DOM for a dynamic experience |
-|Rails                      |Model View Contraoller Framework|
-|[Heroku]                   |Deployment                      |
-|New Relic                  |Real time application monitoring|
-|Papertrail                 |Tracking events & Log management|
+|Rails                      |Model View Controller Framework |
+|[Heroku]                   |Deployment: [App on Heroku]     |
 |Rspec                      |TDD: Unit testing               |
 |Capybara                   |simulates how a user would interact with a website|
-|Postgrsql                  |SQL Database                        |
+|Factory Girl               |A library for setting up Ruby objects as test data  |
+|Postgrsql                  |SQL Database                    |
 |Devise                     |Creating users                  |
 |Amazon Web Services        |Bulk image hosting              |
 |Paperclip                  |Uploading images                |
 |HTML5                      |Web Pages                       |
 |CSS3                       |Styling                         |
-|Bootstrap                  |Base styling theme                      |
+|Bootstrap                  |Base styling theme              |
 |Geolocation/Geomapper      |Showing maps                    |
 
 
@@ -58,4 +57,5 @@ Heroku
 [Steve Musgrave]
 
 [Steve Musgrave]:https://github.com/StephanMusgrave
-[App on Heroku]:http://fierce-anchorage-7288.herokuapp.com/
+[App on Heroku]:http://instamakermusgrave.herokuapp.com/
+
