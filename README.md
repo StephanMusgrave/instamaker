@@ -11,7 +11,7 @@ Using Amazon Web Services's storage platform S3 to save images
 Using ImageMagick for image optimization
 Integrating Bootstrap, a front-end styling theme
 
-![](public/instamaker.png)
+![](Instamaker.png)
 
 ## How to run it
 ```sh
