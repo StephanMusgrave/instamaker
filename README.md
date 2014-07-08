@@ -1,6 +1,8 @@
 # Instamaker - an Instagram clone
 Week 9 project at Makers Academy
 
+![](public/Instamaker.png)
+
 ## Learning Objectives
 Learning to develop a Ruby on Rails app
 Setting up the Rails infrastructure 
@@ -10,8 +12,6 @@ Using Paperclip for file attachment
 Using Amazon Web Services's storage platform S3 to save images
 Using ImageMagick for image optimization
 Integrating Bootstrap, a front-end styling theme
-
-![](Instamaker.png)
 
 ## How to run it
 ```sh
