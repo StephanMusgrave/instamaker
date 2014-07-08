@@ -1,7 +1,7 @@
 # Instamaker - an Instagram clone
 Week 9 project at Makers Academy
 
-![](public/instamaker.png)
+![](public/instamaker_.png)
 
 ## Learning Objectives
 Learning to develop a Ruby on Rails app
