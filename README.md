@@ -1,10 +1,17 @@
-# {Instamaker - an Instagram clone}
+# Instamaker - an Instagram clone
+Week 9 project at Makers Academy
 
-## Objectives
-Learning to implement .........
-I created an app that 
+## Learning Objectives
+Learning to develop a Ruby on Rails app
+Setting up the Rails infrastructure 
+Understanding the roles of routers, controllers, models and views
+Creating one-to-many and many-to-many database relationships between various models: posts, likes, users and tags
+Using Paperclip for file attachment
+Using Amazon Web Services's storage platform S3 to save images
+Using ImageMagick for image optimization
+Integrating Bootstrap, a front-end styling theme
 
-![](????????????.png)
+![](public/instamaker.png)
 
 ## How to run it
 ```sh
@@ -13,31 +20,19 @@ cd instamaker
 open index.html
 ```
 
-
 Heroku
 ----
-[App on Heroku]
-
+Click here to open the web page on Heroku: [App on Heroku]
 
 ## Technologies used
-- Rails
-- TDD (RSpec)
-- Bootstrap
-- Factory Girl
-- Postgresql
-- Devise
-- Javascript
-- HTML5
-- CSS3
-- Git
 
 |Technology                 |Used for                        |
 |---------------------------|--------------------------------|
-|Ruby                       |Main programming language       |
+|Ruby 2.1.1                 |Main programming language       |
 |Javascript                 |Maps/Ajax & jQuery              |
 |Ajax                       |Mainly used in the chatroom     |
 |jQuery                     |Manipulating the DOM for a dynamic experience |
-|Rails                      |Model View Controller Framework |
+|Ruby on Rails              |Model View Controller Framework |
 |[Heroku]                   |Deployment: [App on Heroku]     |
 |Rspec                      |TDD: Unit testing               |
 |Capybara                   |simulates how a user would interact with a website|
