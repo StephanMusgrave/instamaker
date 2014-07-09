@@ -9,7 +9,7 @@ $(document).ready(function(){
     });
 
     GMaps.geocode({
-      address: post.address,
+      address: post.location,
       callback: function(results, status) {
         if (status == 'OK') {
           var latlng = results[0].geometry.location;

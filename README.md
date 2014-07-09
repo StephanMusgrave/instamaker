@@ -1,6 +1,5 @@
 # Instamaker - an Instagram clone
 Week 9 project at Makers Academy
-
 ![](public/instamaker_.png)
 
 ## Learning Objectives
@@ -41,6 +40,7 @@ Click here to open the web page on Heroku: [App on Heroku]
 |Devise                     |Creating users                  |
 |Amazon Web Services        |Bulk image hosting              |
 |Paperclip                  |Uploading images                |
+|ImageMagick                |A software suite for displaying, converting, and editing raster image files|
 |HTML5                      |Web Pages                       |
 |CSS3                       |Styling                         |
 |Bootstrap                  |Base styling theme              |
