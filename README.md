@@ -30,9 +30,10 @@ Click here to open the web page on Heroku: [App on Heroku]
 |Ruby 2.1.1                 |Main programming language       |
 |Javascript                 |Maps/Ajax & jQuery              |
 |Ajax                       |Mainly used in the chatroom     |
+|JBuilder/JSON              |To pass information between Ruby and JavaScript |
 |jQuery                     |Manipulating the DOM for a dynamic experience |
-|Ruby on Rails              |Model View Controller Framework |
-|[Heroku]                   |Deployment: [App on Heroku]     |
+|Ruby on Rails 4.1.1        |Model View Controller Framework |
+|Heroku                     |Deployment: [App on Heroku]     |
 |Rspec                      |TDD: Unit testing               |
 |Capybara                   |simulates how a user would interact with a website|
 |Factory Girl               |A library for setting up Ruby objects as test data  |
@@ -53,4 +54,9 @@ Click here to open the web page on Heroku: [App on Heroku]
 
 [Steve Musgrave]:https://github.com/StephanMusgrave
 [App on Heroku]:http://instamakermusgrave.herokuapp.com/
+
+## Further work to do
+- Sort out error with geomapping on Heroku version
+- Add commnents
+- email notification
 
