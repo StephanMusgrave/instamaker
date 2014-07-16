@@ -11,6 +11,7 @@ Using Paperclip for file attachment
 Using Amazon Web Services's storage platform S3 to save images
 Using ImageMagick for image optimization
 Integrating Bootstrap, a front-end styling theme
+Implementing the Stripe API to accept credit card payments
 
 ## How to run it
 ```sh
