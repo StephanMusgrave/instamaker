@@ -1,5 +1,5 @@
 # Instamaker - an Instagram clone
-Week 9 project at Makers Academy
+Week 9 project at [Makers Academy]
 ![](public/instamaker_.png)
 
 ## Learning Objectives
@@ -55,6 +55,7 @@ Click here to open the web page on Heroku: [App on Heroku]
 
 [Steve Musgrave]:https://github.com/StephanMusgrave
 [App on Heroku]:http://instamakermusgrave.herokuapp.com/
+[Makers Academy]:http://www.makersacademy.com
 
 ## Further work to do
 - Sort out error with geomapping on Heroku version
