@@ -2,29 +2,24 @@
 <div class="container">
 <h1>Instamaker</h1>
 <p>
-%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' 
+= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' 
 
-<% if user_signed_in? %>
-<%= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary btn-lg') %>
-<%= link_to('Edit registration', edit_user_registration_path, class: 'btn btn-primary btn-lg') %>
-<% else %>
-<%= link_to('Login', new_user_session_path, class: 'btn btn-primary btn-lg')  %>  
-<%= link_to('Register', new_user_registration_path, class: 'btn btn-primary btn-lg')  %>
-<% end %>
-<%= link_to "Make a Post", new_post_path, class: 'btn btn-primary btn-lg btn-success' %>
+- if user_signed_in? 
+ = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary btn-lg') 
+ = link_to('Edit registration', edit_user_registration_path, class: 'btn btn-primary btn-lg') 
+- else 
+ = link_to('Login', new_user_session_path, class: 'btn btn-primary btn-lg')    
+ = link_to('Register', new_user_registration_path, class: 'btn btn-primary btn-lg')  
+= link_to "Make a Post", new_post_path, class: 'btn btn-primary btn-lg btn-success' 
 </p>
 </div>
 </div>
 
-<div class='container'>
-<% if @posts.any? %>
-<div class='row'>
-  
-<%= render @posts %>
+.container
+ - if @posts.any?
+  .row
+   = render @posts
+ - else
+  %h2 No posts yet
 
-</div>
-<% else %>
-<h2>No posts yet</h2>
-<% end %>
-</div>
 
