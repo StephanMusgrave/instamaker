@@ -21,16 +21,19 @@ describe Post do
         post.tag_names = 'steam'
         expect(post.tags.count).to eq 1
       end
+
       it 'prepends the tag with a # if necessary' do
         post.tag_names = 'steam'
         tag = post.tags.last
         expect(tag.name).to eq '#steam'
       end
+
       it 'does not double up #s' do
         post.tag_names = '#steam'
         tag = post.tags.last
         expect(tag.name).to eq '#steam'
-      end    
+      end
+          
     end
 
     describe 'multiple comma-separate tags' do

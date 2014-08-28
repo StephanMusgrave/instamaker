@@ -17,7 +17,8 @@ Implementing the Stripe API to accept credit card payments
 ```sh
 git clone git@github.com:StephanMusgrave
 cd instamaker
-open index.html
+rails s
+
 ```
 
 Heroku
@@ -53,12 +54,12 @@ Click here to open the web page on Heroku: [App on Heroku]
 
 [Steve Musgrave]
 
+## Further work to do
+- Sort out error with geomapping on Heroku version
+- Add commments
+- email notification
+
+
 [Steve Musgrave]:https://github.com/StephanMusgrave
 [App on Heroku]:http://instamakermusgrave.herokuapp.com/
 [Makers Academy]:http://www.makersacademy.com
-
-## Further work to do
-- Sort out error with geomapping on Heroku version
-- Add commnents
-- email notification
-
