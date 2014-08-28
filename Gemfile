@@ -33,6 +33,7 @@ gem 'bootstrap-sass'
 gem 'thin'
 gem 'websocket-rails'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'haml'
 
 
 group :development, :test do
