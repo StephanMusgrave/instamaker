@@ -2,15 +2,15 @@
  .container
   %h1 Instamaker
   %p
-   = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' 
+   / = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' 
 
    - if user_signed_in? 
     = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary btn-lg') 
     = link_to('Edit registration', edit_user_registration_path, class: 'btn btn-primary btn-lg') 
+    = link_to "Make a Post", new_post_path, class: 'btn btn-primary btn-lg btn-success' 
    - else 
     = link_to('Login', new_user_session_path, class: 'btn btn-primary btn-lg')    
     = link_to('Register', new_user_registration_path, class: 'btn btn-primary btn-lg')  
-   = link_to "Make a Post", new_post_path, class: 'btn btn-primary btn-lg btn-success' 
 
 .container
  - if @posts.any?
