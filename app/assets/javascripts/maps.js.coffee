@@ -1,7 +1,7 @@
 $(document).ready ->
   postId = $('#map').data('post-id')
 
-  $.get '/posts/' + postId + '.json', (post) ->
+  $.get "/posts/#{postId}.json", (post) ->
     map = new GMaps({
       div: '#map',
       lat: 51.365,

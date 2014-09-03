@@ -7,8 +7,18 @@
   margin-bottom: 10px;
 }
 
-.buttons {
-  display: inline-block;
+.buttons .long-text {
+  display: none; 
+}
+
+@media(min-width: 992px) {
+  .buttons .long-text {
+    display: inline; 
+  }
+
+  .buttons .icon {
+    display: none; 
+  }
 }
 
 .bootstrap-tagsinput {
