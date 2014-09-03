@@ -44,6 +44,7 @@ Click here to open the web page on Heroku: [App on Heroku]
 |Amazon Web Services        |Bulk image hosting              |
 |Paperclip                  |Uploading images                |
 |ImageMagick                |A software suite for displaying, converting, and editing raster image files|
+|Haml                       |To replace ERB templating       |
 |HTML5                      |Web Pages                       |
 |CSS3                       |Styling                         |
 |Bootstrap                  |Base styling theme              |

@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
+  # check if user is signed in before doing action requested (except the index method)
   before_action :authenticate_user!, except: [:index]
+
+  def index
+    @posts = Post.all
+  end
 
   def new
     @post = Post.new
@@ -11,10 +16,6 @@ class PostsController < ApplicationController
     @post.save!
 
     redirect_to posts_path
-  end
-
-  def index
-    @posts = Post.all
   end
 
   def show
