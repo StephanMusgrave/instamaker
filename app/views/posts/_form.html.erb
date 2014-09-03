@@ -1,19 +1,21 @@
-<%= form_for @post do |f| %>
-  <%= f.label :picture %>
-  <%= f.file_field :picture, required: true%>
+<div class="border-form-div">
+  <%= form_for @post do |f| %>
+    <%= f.label :picture %>
+    <%= f.file_field :picture, required: true%>
 
-  <%= f.label :title %>
-  <%= f.text_field :title, required: true %>
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
 
-  <%= f.label :tag_names, 'Tags' %>
-  <%= f.text_field :tag_names, data: { role: 'tagsinput' } %>
+    <%= f.label :tag_names, 'Tags' %>
+    <%= f.text_field :tag_names, data: { role: 'tagsinput' } %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit %>
+  <% end %>
+</div>
 
