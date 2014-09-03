@@ -32,19 +32,19 @@ class PostsController < ApplicationController
     redirect_to '/posts'
   end
 
-  # def edit
-  #   @post = Post.find(params[:id])
-  # end
+  def edit
+    @post = Post.find(params[:id])
+  end
 
-  # def update
-  #   @post = Post.find(params[:id])
+  def update
+    @post = Post.find(params[:id])
     
-  #   if @post.update(params["post"].permit(:title, :description, :picture, :tag_names, :location))
-  #     redirect_to '/posts'
-  #   else
-  #     render 'edit'
-  #   end
-  # end
+    if @post.update(params["post"].permit(:title, :description, :picture, :tag_names, :location))
+      redirect_to '/posts'
+    else
+      render 'edit'
+    end
+  end
 
 end
 
