@@ -30,7 +30,7 @@ Click here to open the web page on Heroku: [App on Heroku]
 |Technology                 |Used for                        |
 |---------------------------|--------------------------------|
 |Ruby 2.1.1                 |Main programming language       |
-|Javascript                 |Maps/Ajax & jQuery              |
+|Javascript & CoffeeScript  |Maps/Ajax & jQuery              |
 |Ajax                       |Mainly used in the chatroom     |
 |JBuilder/JSON              |To pass information between Ruby and JavaScript |
 |jQuery                     |Manipulating the DOM for a dynamic experience |
@@ -56,7 +56,6 @@ Click here to open the web page on Heroku: [App on Heroku]
 [Steve Musgrave]
 
 ## Further work to do
-- Sort out error with geomapping on Heroku version
 - Add commments
 - email notification
 
