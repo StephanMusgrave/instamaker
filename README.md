@@ -3,15 +3,15 @@ Week 9 project at [Makers Academy]
 ![](public/instamaker_.png)
 
 ## Learning Objectives
-Learning to develop a Ruby on Rails app
-Setting up the Rails infrastructure 
-Understanding the roles of routers, controllers, models and views
-Creating one-to-many and many-to-many database relationships between various models: posts, likes, users and tags
-Using Paperclip for file attachment
-Using Amazon Web Services's storage platform S3 to save images
-Using ImageMagick for image optimization
-Integrating Bootstrap, a front-end styling theme
-Implementing the Stripe API to accept credit card payments
+- Learning to develop a Ruby on Rails app
+- Setting up the Rails infrastructure 
+- Understanding the roles of routers, controllers, models and views
+- Creating one-to-many and many-to-many database relationships between various models: posts, likes, users and tags
+- Using Paperclip for file attachment
+- Using Amazon Web Services's storage platform S3 to save images
+- Using ImageMagick for image optimization
+- Integrating Bootstrap, a front-end styling theme
+- Implementing the Stripe API to accept credit card payments
 
 ## How to run it
 ```sh
