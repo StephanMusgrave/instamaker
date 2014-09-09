@@ -12,27 +12,28 @@
         - post.tags.each do |tag|
           = link_to tag.name, tag_path(tag)
         %p
-      .buttons
-        = link_to '#', class: 'btn btn-sm btn-info', data: { toggle: 'modal', target: ".image-modal-#{post.id}" } do
-          %span.glyphicon.glyphicon-fullscreen.icon
-          %span.long-text Enlarge
+      .container  
+        .buttons
+          = link_to '#', class: 'btn btn-sm btn-info', data: { toggle: 'modal', target: ".image-modal-#{post.id}" } do
+            %span.glyphicon.glyphicon-fullscreen.icon
+            %span.long-text Enlarge
 
-        - if post.user == current_user
-          - unless post.location.blank?
-            = link_to post_map_path(post), class: 'btn btn-sm btn-info' do
-              %span.glyphicon.glyphicon-globe.icon
-              %span.long-text Map
-          = link_to "♥ #{post.likes.count}", post_likes_path(post), class: 'like_button btn btn-sm btn-success'
-          = link_to new_post_charge_path(post), class: 'btn btn-sm btn-success' do
-            %span.glyphicon.glyphicon-euro.icon
-            %span.long-text Buy
-          = link_to edit_post_path(post), class: 'btn btn-sm btn-warning' do
-            %span.glyphicon.glyphicon-edit.icon
-            %span.long-text Edit
+          - if post.user == current_user
+            - unless post.location.blank?
+              = link_to post_map_path(post), class: 'btn btn-sm btn-info' do
+                %span.glyphicon.glyphicon-globe.icon
+                %span.long-text Map
+            = link_to "♥ #{post.likes.count}", post_likes_path(post), class: 'like_button btn btn-sm btn-success'
+            = link_to new_post_charge_path(post), class: 'btn btn-sm btn-success' do
+              %span.glyphicon.glyphicon-euro.icon
+              %span.long-text Buy
+            = link_to edit_post_path(post), class: 'btn btn-sm btn-warning' do
+              %span.glyphicon.glyphicon-edit.icon
+              %span.long-text Edit
 
-          = link_to post_path(post), method: :delete, class: 'btn btn-sm btn-danger' do
-            %span.glyphicon.glyphicon-trash.icon
-            %span.long-text Delete
+            = link_to post_path(post), method: :delete, class: 'btn btn-sm btn-danger' do
+              %span.glyphicon.glyphicon-trash.icon
+              %span.long-text Delete
 
 %div{:class => "modal fade image-modal-#{post.id}"}
   .modal-dialog.modal-lg

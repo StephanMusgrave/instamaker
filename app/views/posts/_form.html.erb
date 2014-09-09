@@ -1,22 +1,27 @@
- 
+ <div class="border-form-div">
 
-<%= form_for @post do |f| %>
-  <%= f.label :picture %>
-  <%= f.file_field :picture, required: true%>
+<div class="container">
+  <h2 class="primary-dark-color"><strong>Add your image </strong></h2>
+  <div id="sign-in-form" class="col-xs-6">
 
-  <%= f.label :title %>
-  <%= f.text_field :title, required: true %>
+    <%= form_for @post, html: { multipart: true } do |f| %>
+      <%= f.label :picture %>
+      <%= f.file_field :picture, required: true%>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+      <%= f.label :title %>
+      <%= f.text_field :title, required: true %>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
 
-  <%= f.label :tag_names, 'Tags' %>
-  <%= f.text_field :tag_names, data: { role: 'tagsinput' } %>
+      <%= f.label :location %>
+      <%= f.text_field :location %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.label :tag_names, 'Tags' %>
+      <%= f.text_field :tag_names, data: { role: 'tagsinput' } %>
 
+      <%= f.submit %>
+    <% end %>
 
+  </div>
+</div>
