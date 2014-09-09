@@ -7,11 +7,12 @@ Week 9 project at [Makers Academy]
 - Setting up the Rails infrastructure 
 - Understanding the roles of routers, controllers, models and views
 - Creating one-to-many and many-to-many database relationships between various models: posts, likes, users and tags
-- Using Paperclip for file attachment
+- Implementing Paperclip for file attachment
 - Using Amazon Web Services's storage platform S3 to save images
 - Using ImageMagick for image optimization
 - Integrating Bootstrap, a front-end styling theme
 - Implementing the Stripe API to accept credit card payments
+- Geolocation
 
 ## How to run it
 ```sh
