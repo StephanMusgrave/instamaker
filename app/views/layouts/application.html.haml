@@ -48,4 +48,12 @@
     .container
       %footer
         %p © Stephan Musgrave 2014
-    / /container
+    
+
+    / Modal
+    #sign-in-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .modal-body
+            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+            = render 'layouts/sign_in'
