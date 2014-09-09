@@ -1,9 +1,9 @@
 .jumbotron
- .container
-  - if @posts.any?
-   .row
-    = render @posts
-  - else
-   %h2 No posts yet
+	.container
+		- if @posts.any?
+			.row
+			= render @posts
+		- else
+			%h2 No posts yet
 
 

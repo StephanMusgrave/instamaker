@@ -2,31 +2,32 @@
   .panel.panel-default
     .panel-heading
       %h3.panel-title= post.title
+      by #{post.user.email}
     .panel-body
       - if post.picture.exists?
         = image_tag post.picture.url(:medium), class: 'uploaded-pic'
-        posted by #{post.user.email}
         %p
         = post.description
         %p
         - post.tags.each do |tag|
           = link_to tag.name, tag_path(tag)
         %p
-        
+
       .buttons
         = link_to '#', class: 'btn btn-sm btn-info', data: { toggle: 'modal', target: ".image-modal-#{post.id}" } do
           %span.glyphicon.glyphicon-fullscreen.icon
           %span.long-text Enlarge
-
-        - if post.user == current_user
-          - unless post.location.blank?
-            = link_to post_map_path(post), class: 'btn btn-sm btn-info' do
-              %span.glyphicon.glyphicon-globe.icon
-              %span.long-text Map
+        - unless post.location.blank?
+          = link_to post_map_path(post), class: 'btn btn-sm btn-info' do
+            %span.glyphicon.glyphicon-globe.icon
+            %span.long-text Map
           = link_to "♥ #{post.likes.count}", post_likes_path(post), class: 'like_button btn btn-sm btn-success'
           = link_to new_post_charge_path(post), class: 'btn btn-sm btn-success' do
             %span.glyphicon.glyphicon-euro.icon
             %span.long-text Buy
+
+        - if post.user == current_user
+          %p
           = link_to edit_post_path(post), class: 'btn btn-sm btn-warning' do
             %span.glyphicon.glyphicon-edit.icon
             %span.long-text Edit
