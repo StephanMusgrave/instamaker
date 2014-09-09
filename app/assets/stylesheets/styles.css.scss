@@ -482,38 +482,6 @@ header #user-device-menu ul li a:hover {
 }
 
 
-/* Chat - List */
-#conversations ul li {
-	position: relative;
-	border-bottom: 1px solid #9d13ff;
-	padding: 10px 0;
-}
-#conversations ul li.new .chat-name {
-	font-weight: bold;
-}
-#conversations ul li.new {
-	background: rgb(244, 234, 255);
-}
-#conversations ul li a {
-	display: block;
-}
-#conversations .chat-name {
-	font-size: 19px;
-	margin-top: 12px;
-}
-#conversations .last-msg {
-	color: #B9B6B6;
-}
-#conversations .remove-btn {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	margin: auto 0;
-	height: 22px;
-	font-size: 20px;
-}
-
 
 /* Chat - Chat */
 #chat-window {
