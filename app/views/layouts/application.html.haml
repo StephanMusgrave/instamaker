@@ -29,10 +29,16 @@
                 %img#logo_img{:src => "/images/instamaker_logo2.png"}/
 
           .navbar-collapse.collapse
-            %form.navbar-form.navbar-right{:role => "form"}
+            %form.navbar-form.navbar-left{:role => "form"}
               .form-group
                 - if user_signed_in?
                   = link_to "Make a Post", new_post_path, class: 'btn btn-primary btn-lg btn-success' 
+                - else
+                  = link_to("Make a Post", new_user_session_path, class: 'btn btn-primary btn-lg')    
+
+            %form.navbar-form.navbar-right{:role => "form"}
+              .form-group
+                - if user_signed_in?
                   = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary btn-lg') 
                   = link_to('Edit registration', edit_user_registration_path, class: 'btn btn-primary btn-lg') 
                 - else
