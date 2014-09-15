@@ -42,18 +42,15 @@
                   = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary btn-lg') 
                   = link_to('Edit registration', edit_user_registration_path, class: 'btn btn-primary btn-lg') 
                 - else
-                  = link_to('Sign in', new_user_session_path, class: 'btn btn-primary btn-lg')    
-                  = link_to('Sign up', new_user_registration_path, class: 'btn btn-primary btn-lg')  
-
-                / %input.form-control{:placeholder => "Email", :type => "text"}/
-              / .form-group
-              /   %input.form-control{:placeholder => "Password", :type => "password"}/
-              / %button.btn.btn-success{:type => "submit"} Sign in
+                %input.form-control{:placeholder => "Email", :type => "text"}/
+              .form-group
+                %input.form-control{:placeholder => "Password", :type => "password"}/
 
     = yield
-    .container
-      %footer
-        %p © Stephan Musgrave 2014
+    = render 'layouts/footer'
+    / .container
+    /   %footer
+    /     %p © Stephan Musgrave 2014
     
 
 / Modal

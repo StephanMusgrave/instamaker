@@ -16,8 +16,9 @@ Week 9 project at [Makers Academy]
 
 ## How to run it
 ```sh
-git clone git@github.com:StephanMusgrave
+git clone git@github.com:StephanMusgrave/instamaker.git
 cd instamaker
+bundle install
 rails s
 
 ```
