@@ -20,6 +20,7 @@
 
 .body {
 margin-top: 50px;
+background-color: red;
 }
 
 .jumbotron {
@@ -34,26 +35,24 @@ margin-top: 50px;
 
 .navbar-default {
   .container-fluid {
-    background-color: #b80b03;
+    background-color: #000000;
     .navbar-nav > li > a {
       color: #ffffff;
       font-size: 16px;
       font-weight: bold;   
     }    
     .navbar-brand {
-      color: black;
+      color: #ffffff;
       font-size: 30px;
       font-weight: bold;
-      font-family: 'Hobo Std';
-      text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0#fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-
-
+      font-family: 'Monotype Corsiva';
     }
   }
 }
 
 .container-fluid {
-  background: rgba(255, 255, 255, 0.5);
+  background-color: #000000;
+  /*background: rgba(255, 255, 255, 0.5);*/
   padding: 30px 50px;
   border-radius: 20px;
 }
