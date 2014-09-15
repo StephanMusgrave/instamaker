@@ -1,23 +1,21 @@
 .container
-  %br/
-  %h2.primary-dark-color
+
+  %h2
     %strong Add your image
-  #sign-in-form.col-xs-6
-    = form_for @post, html: { multipart: true } do |f|
-      %p
-        = f.label :picture
-        = f.file_field :picture, required: true
-      %p
-        = f.label :title
-        = f.text_field :title, required: true
-      %p
-        = f.label :description
-        = f.text_field :description
-      %p
-        = f.label :location
-        = f.text_field :location
-      %p
-        = f.label :tag_names, 'Tags'
-        = f.text_field :tag_names, data: { role: 'tagsinput' }
-      = f.submit
-    %br/
+  = form_for @post, html: { multipart: true } do |f|
+    .form-group
+      = f.label :picture
+      = f.file_field :picture, required: true, class: "form-control"
+    .form-group
+      = f.label :title
+      = f.text_field :title, required: true, class: "form-control", placeholder: "title"
+    .form-group
+      = f.label :description
+      = f.text_field :description, class: "form-control", placeholder: "description"
+    .form-group
+      = f.label :location
+      = f.text_field :location, class: "form-control", placeholder: "CR2 7DZ"
+    .form-group
+      = f.label :tag_names, 'Tags'
+      = f.text_field :tag_names, data: { role: 'tagsinput' }, class: "form-control", placeholder: "tag1 tag2"
+    = f.submit class: "btn btn-primary"
