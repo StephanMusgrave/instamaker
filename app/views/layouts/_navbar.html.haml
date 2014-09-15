@@ -1,60 +1,55 @@
-.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
-  .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      / %a.navbar-brand{:href => "/"} Instamaker
-      #logo
-        %a{:href => "/"}
-          %img#logo_img{:src => "/images/instamaker_logo2.png"}/
-
-    .navbar-collapse.collapse
-      %form.navbar-form.navbar-left{:role => "form"}
-        .form-group
-          - if user_signed_in?
-            = link_to "Make a Post", new_post_path, class: 'btn btn-primary btn-lg btn-success' 
-          - else
-            = link_to("Make a Post", new_user_session_path, class: 'btn btn-primary btn-lg')    
-
-      %form.navbar-form.navbar-right{:role => "form"}
-        .form-group
-          - if user_signed_in?
-            = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary btn-lg') 
-            = link_to('Edit registration', edit_user_registration_path, class: 'btn btn-primary btn-lg')
-          - else
-            = link_to "Sign up", new_user_registration_path, class: 'btn btn-primary btn-lg'
-            = link_to "Sign in", new_user_session_path, class: 'btn btn-primary btn-lg'
-
-
-
-/ %nav.navbar.navbar-default{:role => "navigation"}
+/ .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
 /   .container-fluid
-/     / Brand and toggle get grouped for better mobile display
 /     .navbar-header
-/       %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+/       %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
 /         %span.sr-only Toggle navigation
 /         %span.icon-bar
 /         %span.icon-bar
 /         %span.icon-bar
-/       = link_to "Yelpdemo", root_path, class: "navbar-brand"
-/     / Collect the nav links, forms, and other content for toggling
-/     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-/       %ul.nav.navbar-nav
-/         %li= link_to "About", pages_about_path
-/         %li= link_to "Contact", pages_contact_path
-/       = form_tag search_restaurants_path, method: :get, class: "navbar-form navbar-left" do
-/         %p
-/           = text_field_tag :search,params[:search], class: "form-control"
-/           = submit_tag "Search", name: nil, class: "btn btn-default"
-/       %ul.nav.navbar-nav.navbar-right
-/         - if user_signed_in?
-/           %li= link_to "Sign out", destroy_user_session_path, method: :delete
-/           %li= link_to "Edit Profile: #{current_user.first_name.capitalize}", edit_user_registration_path
-/         - else
-/           %li= link_to "Sign up", new_user_registration_path
-/           %li= link_to "Sign in", new_user_session_path
+/       = link_to "Instamaker", root_path, class: "navbar-brand"
+/       / %a.navbar-brand{:href => "/"} Instamaker
+/       / #logo
+/       /   %a{:href => "/"}
+/       /     %img#logo_img{:src => "/images/instamaker_logo2.png"}/
+
+/     .navbar-collapse.collapse
+/       %form.navbar-form.navbar-left{:role => "form"}
+/         .form-group
+/           - if user_signed_in?
+/             = link_to "Make a Post", new_post_path, class: 'btn btn-primary btn-lg btn-success' 
+/           - else
+/             = link_to("Make a Post", new_user_session_path, class: 'btn btn-primary btn-lg')    
+
+/       %form.navbar-form.navbar-right{:role => "form"}
+/         .form-group
+/           - if user_signed_in?
+/             = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'btn btn-primary btn-lg') 
+/             = link_to('Edit registration', edit_user_registration_path, class: 'btn btn-primary btn-lg')
+/           - else
+/             = link_to "Sign up", new_user_registration_path, class: 'btn btn-primary btn-lg'
+/             = link_to "Sign in", new_user_session_path, class: 'btn btn-primary btn-lg'
+
+
+
+%nav.navbar.navbar-default{:role => "navigation"}
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "Instamaker", root_path, class: "navbar-brand"
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li= link_to "Sign out", destroy_user_session_path, method: :delete
+          %li= link_to "Edit Profile", edit_user_registration_path
+        - else
+          %li= link_to "Sign up", new_user_registration_path
+          %li= link_to "Sign in", new_user_session_path
 
 
