@@ -2,7 +2,7 @@
   .panel.panel-default
     .panel-heading
       %h3.panel-title= post.title
-      by #{post.user.email}
+      by #{post.user.first_name.capitalize} #{post.user.last_name[0].capitalize}.
     .panel-body
       - if post.picture.exists?
         = image_tag post.picture.url(:medium), class: 'uploaded-pic'
