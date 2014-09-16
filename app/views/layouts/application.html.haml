@@ -20,7 +20,7 @@
               %span.sr-only Close
             = content_tag :div, msg, :id => "flash_#{name}"             
       = yield
-      = render 'layouts/footer'    
+    = render 'layouts/footer'    
 
 / Modal
 #sign-in-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
