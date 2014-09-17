@@ -46,6 +46,7 @@
       %ul.nav.navbar-nav.navbar-left
         - if user_signed_in?
           %li= link_to 'Make a Post', new_post_path, class: "btn btn-link"
+
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li= link_to "Sign out", destroy_user_session_path, method: :delete
@@ -53,5 +54,7 @@
         - else
           %li= link_to "Sign up", new_user_registration_path
           %li= link_to "Sign in", new_user_session_path
+
+
 
 

@@ -10,6 +10,7 @@
     = csrf_meta_tags
 
   %body
+    = render 'layouts/facebook' 
     = render 'layouts/navbar' 
     .container-fluid
       - flash.each do |name, msg|
