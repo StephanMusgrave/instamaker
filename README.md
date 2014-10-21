@@ -50,6 +50,7 @@ Click here to open the web page on Heroku: [App on Heroku]
 |HTML5                      |Web Pages                       |
 |CSS3                       |Styling                         |
 |Bootstrap                  |Base styling theme              |
+|Glypicons                  |for styling links and buttons   |
 |Geolocation/Geomapper      |Showing maps                    |
 |Stripe                     |handling credit card payments   |
 
